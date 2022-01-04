@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6学习</title>
+</head>
+<style>
+    #ad {
+        width: 200px;
+        height: 200px;
+        background-color: #58a;
+    }
+</style>
+
+<body>
+    <div id="ad"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <script>
+        //###箭头函数不能使用arguments 变量###
+        // let fn = () => {
+        //     console.log(arguments);
+        // }
+        // fn(1, 2, 3)
+
+        // ###箭头函数的简写：###
+        // 1）省略小括号，当形参有且只有一个的时候
+        // 2）省略花括号和return，当代码只有一条语句的时候，而且语句的执行结果就是函数的返回值
+        // let pow = n => n * n;
+        // console.log(pow(9));
+        // 需求-1 点击div 2s 后颜色变成 粉色
+        // 获取元素
+        // let ad = document.getElementById('ad');
+        // // // 绑定事件 es5
+        // // ad.onclick = function () {
+        // //     // 保存this
+        // //     let _this = this
+        // //     // 定时器
+        // //     setTimeout(function () {
+        // //         // 修改背景颜色 this
+        // //         // console.log(_this);
+        // //         _this.style.backgroundColor = 'pink';
+        // //     }, 2000)
+        // // }
+        // // 绑定事件 es6
+        // ad.onclick = function () {
+        //     // 定时器 箭头函数
+        //     setTimeout(() => {
+        //         // 修改背景颜色 this
+        //         // console.log(this);
+        //         this.style.backgroundColor = 'pink';
+        //     }, 2000)
+        // }
+        // // 需求-2 从数组中返回偶数的元素
+        // const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 100, 1001, 999, 55, 88, 888, 666, 4441];
+        // // es5
+        // // const result = arr.filter(function (item) {
+        // //     if (item % 2 === 0) {
+        // //         return true;
+        // //     } else {
+        // //         return false;
+        // //     }
+        // // });
+        // // es6
+        // const result = arr.filter(item => item % 2 === 0);
+        // console.log(result)
+
+        // ###设置函数形参的默认值###
+        // function add(a, b, c) {
+        //     return a + b + c
+        // }
+        // c没有实参，相加结果为NaN
+        // let result = add(1, 2);
+        // console.log(result)
+        // //为形参设置默认值，一般设置了默认值的形参位置都靠后（潜规则）
+        // function add(a, b, c = 10) {
+        //     return a + b + c
+        // }
+        // let result = add(1, 2);
+        // console.log(result)
+        // // 也可以和架构赋值搭配使用
+        // // let connect=(options)=>{
+        // //     console.log(options)
+        // // }
+        // let connect = ({ host = '127.0.0.1', username, password, port }) => {
+        //     console.log(host, username, password, port)
+        // }
+        // // 当host没有传入实参时，host默认为初始值
+        // connect({
+        //     username: 'root',
+        //     password: 'root',
+        //     port: 3006
+        // })
+
+        // // ###rest参数###
+        // // es5获取实参的方式
+        // function date() {
+        //     console.log(arguments)//打印出来可以看到是一个对象
+        // }
+        // date('阿娇', '柏芝', '思慧');
+        // // es6 rest参数  
+        // function doors(...args) {
+        //     console.log(args)//打印出来是个数组  filter some ervery map 方法都可以直接使用
+        // }
+        // doors('阿娇', '柏芝', '思慧')
+        // // 如果有多个参数，rest参数必须放最后面
+        // function fnrest(a, b, ...cuty) {
+        //     console.log(a, b, cuty)
+        // }
+        // fnrest('阿娇', '柏芝', '思慧', 'pink', "viewport", 'root', 555, 888, 5154)
+
+        // // ###扩展运算符【...】###
+        // // 1、数组的合并
+        // const kuaizi = ['王太利', '肖央'];
+        // const fenghuang = ['曾毅', '玲花'];
+        // const zuixuanxiaopingguo = [...kuaizi, ...fenghuang];//['王太利', '肖央','曾毅', '玲花']
+        // console.log(zuixuanxiaopingguo)
+        // // 2、数组的克隆，如果有引用数据依旧是浅拷贝
+        // const sanzhihua = ['E', 'G', 'M'];
+        // const sanyecao = [...sanzhihua];//['E','G','M']
+        // console.log(sanyecao)
+        // // 3、将为数组转化为真正的数组
+        // const divs = document.querySelectorAll('div');
+        // const divArr = [...divs];//divs是NodeList伪数组，divArr是数组
+        // console.log(divs, divArr)
+
+        // ###Symbol###
+        // 向对象中添加方法 up down
+        // let game = {
+        //     name: '俄罗斯方块',
+        //     up: function () {
+        //         console.log('gaame内的up')
+        //     },
+        //     down: function () {
+        //         console.log('gaame内的down')
+        //     },
+        // }
+        // // 声明一个对象
+        // let methods = {
+        //     up: Symbol(),
+        //     down: Symbol()
+        // }
+        // game[methods.up] = function () {
+        //     console.log('我可以改变形状')
+        // }
+        // game[methods.down] = function () {
+        //     console.log('我可以快速下降')
+        // }
+        // console.log(game)
+        // 我还可以这样
+        // let youxi = {
+        //     name: '狼人杀',
+        //     [Symbol('say')]: function () {
+        //         console.log('我可以发言')
+        //     },
+        //     [Symbol('zibao')]: function () {
+        //         console.log('我可以自爆')
+        //     }
+        // }
+        // console.log(youxi)
+        // 作为对象属性遍历方法
+        // let a = { f: '无证之罪' };
+        // let d = Symbol.for('d');
+        // let c = Symbol('c');
+        // a[c] = 'localSymbol';
+        // a[d] = 'globalSymbol';
+        // //可以获取指定对象的所有 Symbol 属性名。该方法返回一个数组，成员是当前对象的所有用作属性名的 Symbol 值。
+        // let b = Object.getOwnPropertySymbols(a);
+        // //可以返回所有类型的键名，包括常规键名和 Symbol 键名。
+        // let e = Reflect.ownKeys(a)
+        // // 返回对象的常规键名，不包括Symbol键名
+        // let j = Object.keys(a);
+        // console.log(b);
+        // console.log(e);
+        // console.log(j);
+        //Symbol的内置属性
+        // let arr = [1, 2, 3]
+        // let arr2 = [4, 5, 6]
+        // arr2[Symbol.isConcatSpreadable] = false
+        // console.log(arr.concat(arr2))
+
+        // ###迭代器###
+        // 声明一个数组
+        const xiyou = ['唐僧', '孙悟空', '猪八戒', '沙僧'];
+        // // 使用for...in遍历数组
+        // for(let v in xiyou){
+        //     // 打印出来的是索引
+        //     console.log(v)
+        // }
+        // // 使用for...of遍历数组
+        // for(let v of xiyou){
+        //     // 打印出来的是值
+        //     console.log(v)
+        // }
+        let iterator = xiyou[Symbol.iterator]();
+        console.log(iterator.next())
+        console.log(iterator.next())
+        console.log(iterator.next())
+        console.log(iterator.next())
+        console.log(iterator.next())
+        console.log(iterator.next())
+        console.log(iterator)
+
+
+
+    </script>
+</body>
+
+</html>

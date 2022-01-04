@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            width: 400px;
+            height: 540px;
+            margin: 100px auto 0;
+            background: url(./img/bg.jpg) no-repeat 100% / 100%;
+        }
+
+        .box .title {
+            padding-left: 50px;
+            margin-top: 30px;
+            height: 30px;
+            font-size: 16px;
+            color: rgb(224, 94, 94);
+            line-height: 30px;
+        }
+
+        .box .content {
+            padding: 10px;
+            margin: 30px auto 0;
+            width: 300px;
+            height: 370px;
+            background: #fff;
+            border-radius: 20px;
+            box-sizing: border-box;
+        }
+
+        .content .pic {
+            display: block;
+            margin: 0 auto;
+            width: 200px;
+            height: 220px;
+            background: url(./img/phone.webp);
+        }
+
+        .content .introduce {
+            height: 50px;
+            font-size: 16px;
+        }
+
+        .content h3 {
+            height: 30px;
+            color: red;
+            line-height: 30px;
+        }
+
+        .content h3 span:nth-child(1) {
+            font-size: 12px;
+        }
+
+        .content h3 .tip {
+            font-size: 12px;
+            color: #ccc;
+            margin-left: 30px;
+        }
+
+        .bottom {
+            margin-top: 26px;
+            height: 80px;
+            background: #fff;
+        }
+
+        .bottom .bottom-wrapper {
+            width: 300px;
+            height: 80px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .codeTip {
+            width: 200px;
+            height: 100%;
+        }
+
+        .codeTip p:nth-child(1) {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .codeTip p:nth-child(2) {
+            margin-top: 4px;
+            font-size: 12px;
+            color: #ccc;
+        }
+
+        .code {
+            width: 80px;
+            height: 100%;
+            background: rgb(221, 228, 206);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 80px;
+        }
+
+        .share {
+            display: block;
+            margin: 0 auto;
+            width: 50px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            background: rgb(105, 197, 18);
+            color: #fff;
+            font-size: 18px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .current {
+            width: 300px;
+            height: 400px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="img">
+        <h5 class="title">Hi,这个商品很不错，你也买一个吧~</h5>
+        <div class="content">
+            <div class="pic"></div>
+            <h4 class="introduce">HUAWEI nova 8 8GB+128GB 亮黑色 双卡 全网通版</h4>
+            <h3><span>￥</span><span class="price"> 3299</span><span class="tip">价格具有时效性</span></h3>
+        </div>
+        <div class="bottom">
+            <div class="bottom-wrapper">
+                <div class="codeTip">
+                    <p>长按小程序 查看产品详情</p>
+                    <p>分享"华为旗舰店"小程序</p>
+                </div>
+                <div class="code">二维码</div>
+            </div>
+        </div>
+    </div>
+    <span class="share">分享</span>
+
+    <img src="#" alt="" class="current">
+    <script>
+        window.onload = function () {
+            var share = document.querySelector('.share');
+            var img = document.querySelector('#img');
+            var box = document.querySelector('.box');
+            share.onclick = function () {
+                html2canvas(img).then(function (canvas) {
+                    var imgUrl = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+                    document.getElementsByTagName('img')[0].src = imgUrl;
+                })
+                document.getElementsByTagName('img')[0].style.display = 'block';
+                box.style.opacity = '.5';
+
+            }
+        }
+    </script>
+</body>
+
+</html>

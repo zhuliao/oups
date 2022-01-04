@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米商品模块</title>
+</head>
+<style>
+    body {
+        background-color: #dadada6b;
+    }
+    
+    del {
+        color: #B0B0B0;
+    }
+    
+    .main {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        width: 1226px;
+        height: 614px;
+    }
+    
+    .left {
+        width: 234px;
+        height: 614px;
+        background-color: antiquewhite;
+    }
+    
+    .left img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .right {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: space-between;
+        width: 982px;
+        height: 614px;
+    }
+    
+    .right .cell {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 234px;
+        height: 300px;
+        padding: 20px 0;
+        background-color: rgb(255, 255, 255);
+        box-sizing: border-box;
+    }
+    
+    .right .cell .top {
+        width: 160px;
+        height: 160px;
+        margin-bottom: 18px;
+    }
+    
+    .right .cell .top img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .right .cell .bottom {
+        text-align: center;
+        font-size: 14px;
+    }
+    
+    .right .cell .bottom .title {
+        margin-bottom: 2px;
+        color: #333333;
+    }
+    
+    .right .cell .bottom .desc {
+        margin-bottom: 10px;
+        color: #B0B0B0;
+        font-size: 12px;
+    }
+    
+    .right .cell .bottom .price {
+        margin-bottom: 10px;
+        color: #FF6700;
+    }
+    
+    .move-up:hover {
+        transform: translateY(-2px);
+        transition: all 0.2s linear;
+        box-shadow: 0 15px 25px 0 #d3d2d2c0;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <div class="left move-up">
+            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c583f2edc613f1be20fa415910b13ce3.jpg?thumb=1&w=293&h=768&f=webp&q=90" alt="MIX Fold">
+        </div>
+        <div class="right">
+            <div class="cell move-up">
+                <div class="top">
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6d0a3e7acc3e91e2cfd83dbbe1d1c029.jpg?thumb=1&w=250&h=250&f=webp&q=90" alt="Redmi Note 11 Pro系列">
+                </div>
+                <div class="bottom">
+                    <div class="title">
+                        Redmi Note 11 Pro系列
+                    </div>
+                    <div class="desc">
+                        Redmi Note 11 Pro系列
+                    </div>
+                    <div class="price">
+                        <span class="num">1799</span>元<span>起</span>
+                        <del>
+                            <span class="num">1799</span>元<span>起</span>
+                        </del>
+                    </div>
+                </div>
+            </div>
+            <div class="cell move-up">
+                <div class="top">
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/50da95e9e4496dcac8704da2deb94f6e.jpg?thumb=1&w=250&h=250&f=webp&q=90" alt=" Redmi Note 11 5G">
+                </div>
+                <div class="bottom">
+                    <div class="title">
+                        Redmi Note 11 5G
+                    </div>
+                    <div class="desc">
+                        5000mAh大电量
+                    </div>
+                    <div class="price">
+                        <span class="num">1199</span>元<span>起</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cell move-up">
+                <div class="top">
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c001ebc4aee69bc9ff6fae9ecf9137d0.jpg?thumb=1&w=250&h=250&f=webp&q=90" alt="Redmi Note 11 4G">
+                </div>
+                <div class="bottom">
+                    <div class="title">
+                        Redmi Note 11 4G
+                    </div>
+                    <div class="desc">
+                        5000mAh大电量
+                    </div>
+                    <div class="price">
+                        <span class="num">999</span>元<span>起</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cell move-up">
+                <div class="top">
+                    <img src="2" alt="331">
+                </div>
+                <div class="bottom">
+                    <div class="title">
+                        331
+                    </div>
+                    <div class="desc">
+                        331
+                    </div>
+                    <div class="price">
+                        <span class="num">1799</span>元<span>起</span>
+                        <del>
+                            <span class="num">1799</span>元<span>起</span>
+                        </del>
+                    </div>
+                </div>
+            </div>
+            <div class="cell move-up">
+                <div class="top">
+                    <img src="2" alt="331">
+                </div>
+                <div class="bottom">
+                    <div class="title">
+                        331
+                    </div>
+                    <div class="desc">
+                        331
+                    </div>
+                    <div class="price">
+                        <span class="num">1799</span>元<span>起</span>
+                        <del>
+                            <span class="num">1799</span>元<span>起</span>
+                        </del>
+                    </div>
+                </div>
+            </div>
+            <div class="cell move-up">
+                <div class="top">
+                    <img src="2" alt="331">
+                </div>
+                <div class="bottom">
+                    <div class="title">
+                        331
+                    </div>
+                    <div class="desc">
+                        331
+                    </div>
+                    <div class="price">
+                        <span class="num">1799</span>元<span>起</span>
+                        <del>
+                            <span class="num">1799</span>元<span>起</span>
+                        </del>
+                    </div>
+                </div>
+            </div>
+            <div class="cell move-up">
+                <div class="top">
+                    <img src="2" alt="331">
+                </div>
+                <div class="bottom">
+                    <div class="title">
+                        331
+                    </div>
+                    <div class="desc">
+                        331
+                    </div>
+                    <div class="price">
+                        <span class="num">1799</span>元<span>起</span>
+                        <del>
+                            <span class="num">1799</span>元<span>起</span>
+                        </del>
+                    </div>
+                </div>
+            </div>
+            <div class="cell move-up">
+                <div class="top">
+                    <img src="2" alt="331">
+                </div>
+                <div class="bottom">
+                    <div class="title">
+                        331
+                    </div>
+                    <div class="desc">
+                        331
+                    </div>
+                    <div class="price">
+                        <span class="num">1799</span>元<span>起</span>
+                        <del>
+                            <span class="num">1799</span>元<span>起</span>
+                        </del>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

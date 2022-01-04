@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise封装异步函数</title>
+</head>
+
+<body>
+
+    <script>
+        const fs = require('fs');
+        con
+        fs.readFile('./one.md', (err, data1) => {
+            fs.readFile('./one.md', (err, data2) => {
+                fs.readFile('./one.md', (err, data2) => {
+                    console.log(data1 + '\r\n' + data2 + '\r\n' + data3)
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>
