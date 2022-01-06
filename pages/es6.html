@@ -13,15 +13,43 @@
         height: 200px;
         background-color: #58a;
     }
+
+    #converter {
+        margin-top: 20px;
+        padding: 10px;
+        width: 100px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        background: rgb(25, 218, 243);
+        border-radius: 12px;
+    }
 </style>
 
 <body>
     <div id="ad"></div>
-    <div></div>
+    <div id="converter">Converter</div>
     <div></div>
     <div></div>
 
     <script>
+        const obj = {
+            name: 'a,b,c,d',
+            code: '1,2,3,4'
+        }
+        const list = []
+        const converter = document.querySelector('#converter')
+        converter.onclick = () => {
+            const {
+                myNameList = obj.name.split(','), 
+                myCodeList = obj.code.split(',')
+            } = obj
+            for (let i = 0; i < myNameList.length; i++) {
+                list.push(JSON.parse(`{"${[myNameList[i]]}":${myCodeList[i]}}`))
+            }
+            return list
+        }
+
         //###箭头函数不能使用arguments 变量###
         // let fn = () => {
         //     console.log(arguments);
@@ -205,9 +233,6 @@
         console.log(iterator.next())
         console.log(iterator.next())
         console.log(iterator)
-
-
-
     </script>
 </body>
 
